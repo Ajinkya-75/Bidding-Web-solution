@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+
+	<div id="menu">
+{% block menu %}	
+		<ul>
+<li class="first">
+<a href={{curl}}user/ >User Home</a>
+</li>	
+<li>
+<span class="opener">Seller Options<b></b></span>
+	<ul>
+		<li><a href={{curl}}user/addproduct/  >Add Product</a></li>
+		<li><a href="#">Manage Product</a></li>
+		<li><a href="#">View Bidding Products Status</a></li>
+		<li><a href="#">View Orders</a></li>
+		<li><a href="#">Payment History</a></li>
+	</ul>
+</li>	
+<li>
+<span class="opener">Buyer Options<b></b></span>
+	<ul>
+		<li><a href="#" >View Product</a></li>
+		<li><a href="#" >View Bidding</a></li>
+	</ul>
+</li>	
+<li>
+<span class="opener">Settings<b></b></span>
+	<ul>
+		<li><a href="#" >Change Passwod</a></li>
+		<li><a href="#">Edit Profile</a></li>
+		<li><a href="#">View Notifications</a></li>
+		<li><a href="#">Launch Feedbacks</a></li>
+	</ul>
+</li>
+<li class="last"><a href={{curl}}login/ >Logout</a></li>	
+</ul>
+{% endblock %}
+
+
+{% block slider %}
+{% endblock %}
+
+
+{% block page %}
+<center>
+<h2>Buy Product Here!!!</h2>
+
+<h1>UserID : {{cunm}}</h1>
+<br>
+<h1>ProductID : {{pid}}</h1>
+<br>
+<h1>Product Price : {{price}}</h1>
+<br>
+
+ <form action={{paypalURL}} method="post">
+        <!-- Identify your business so that you can collect the payments. -->
+        <input type="hidden" name="business" value={{paypalID}}>
+        
+        <!-- Specify a Buy Now button. -->
+        <input type="hidden" name="cmd" value="_xclick">
+        
+        <!-- Specify details about the item that buyers will purchase. -->
+        <input type="hidden" name="item_name" value={{pid}}>
+        <input type="hidden" name="item_number" value=1>
+        <input type="hidden" name="amount" value={{price}}>
+        <input type="hidden" name="currency_code" value="USD">
+        
+        <!-- Specify URLs -->
+        <input type='hidden' name='cancel_return' value={{curl}}cancel/ >
+        <input type='hidden' name='return' value={{curl}}payment/?pid={{pid}}&price={{price}}&uid={{cunm}} >
+        
+        <!-- Display the payment button. -->
+        <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+    </form>
+
+
+
+
+
+</center>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

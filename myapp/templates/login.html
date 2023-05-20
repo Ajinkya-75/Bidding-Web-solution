@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Login Here!!!</h2>
+<font color="orange">{{output}}</font>
+<form method="post" action={{curl}}login/   >
+{% csrf_token %}
+<table cellspacing="10">
+<tr>
+<td>Email</td>
+<td>
+<input type="text" name="email" placeholder="Enter email"/>
+</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>
+<input type="password" name="password" placeholder="Enter password"/>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit"  value="Login"/> 
+</td>
+</tr>
+</table>
+</form>
+
+
+{% endblock %}
+
+

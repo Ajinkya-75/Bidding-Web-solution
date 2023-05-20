@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+#catmain
+{
+  height:auto;
+  width:600px;
+}
+#catmainp
+{
+  height:150px;
+  width:200px;
+  float:left;
+}
+</style>
+
+<h1>Category List</h1>
+<br>
+<div id="catmain">
+{% for cat in clist %}
+<a href={{curl}}viewsubcat/?cnm={{cat.1}}   >
+<div id="catmainp">
+<center>
+<img src={{media_url}}{{cat.2}}  height="120" width="150"/>
+<br>
+<b>{{cat.1}}</b>
+</center>
+</div>
+</a>	
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+

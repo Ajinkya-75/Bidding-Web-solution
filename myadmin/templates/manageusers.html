@@ -1,0 +1,61 @@
+{% extends 'adminhome.html' %}
+
+{% load static %}
+{% block page %}
+<center>
+<h2>View And Manage Users</h2>
+
+<table cellspacing="5">
+<tr>
+<th>RegID</th>
+<th>Name</th>
+<th>Username</th>
+<th>Address</th>
+<th>Mobile</th>
+<th>City</th>
+<th>Gender</th>	
+<th>Date</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+<tr><td colspan="10"><hr></td></tr>
+{% for user in userDetails %}
+<tr>
+<td>{{user.0}}</td>
+<td>{{user.1}}</td>
+<td>{{user.2}}</td>
+<td>{{user.4}}</td>
+<td>{{user.5}}</td>
+<td>{{user.6}}</td>
+<td>{{user.7}}</td>
+<td>{{user.10}}</td>
+<td>
+{% if user.9 %}
+<a title="Block Users" href={{curl}}myadmin/manageusersstatus/?s=block&rid={{user.0}}   >
+<img src="{% static 'images/block.jpeg' %}" height="50" width="70"/>
+</a>
+{% else %}
+<a title="Un-Block Users" href={{curl}}myadmin/manageusersstatus/?s=unblock&rid={{user.0}}  >
+<img src="{% static 'images/unblock.jpeg' %}" height="50" width="70"/>
+{% endif %}
+</a>
+</td>
+<td>
+<a title="Delete Users" href={{curl}}myadmin/manageusersstatus/?s=delete&rid={{user.0}}  >
+<img src="{% static 'images/delete.png' %}" height="50" width="70"/>
+</a>
+</td>
+</tr>
+<tr><td colspan="10"><hr></td></tr>
+{% endfor %}
+
+</table>
+
+</center>
+{% endblock %}
+
+
+
+
+
+

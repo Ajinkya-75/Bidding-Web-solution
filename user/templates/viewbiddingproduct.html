@@ -1,0 +1,51 @@
+{% extends 'userhome.html' %}
+
+{% block slider %}
+{% endblock %}
+
+{% block page %}
+
+<center>
+<h2>View Bidding Products</h2>
+
+<table cellspacing="5">
+<tr>
+<th>Pid</th>
+<th>Title</th>
+<th>Category</th>
+<th>Price</th>
+<th>Description</th>
+<th>Icon</th>
+<th>Action</th>
+</tr>
+<tr><td colspan="7"><hr></td></tr>
+{% for p in plist %}
+<tr>
+<td>{{p.0}}</td>
+<td>{{p.1}}</td>
+<td>{{p.2}}</td>
+<td>{{p.3}}</td>
+<td>{{p.4}}</td>
+<td><img src={{media_url}}{{p.6}} height='50' width='100' /></td>
+<td><a href={{curl}}user/bidhistory/?pid={{p.0}} >Bidding History</a></td>
+</tr>
+<tr><td colspan="10"><hr></td></tr>
+{% endfor %}
+
+</table>
+
+</center>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Register page</h2>
+<font color="orange">{{output}}</font>
+<form method="post" action={{curl}}register/   >
+{% csrf_token %}
+<table cellspacing="10">
+<tr>
+<td>Name</td>
+<td>
+<input type="text" name="name" placeholder="Enter name"/>
+</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>
+<input type="text" name="email" placeholder="Enter email"/>
+</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>
+<input type="password" name="password" placeholder="Enter password"/>
+</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>
+<textarea cols="31" rows="5" name="address" placeholder="Enter address"></textarea>
+</td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>
+<input type="text" name="mobile" placeholder="Enter mobile"/>
+</td>
+</tr>
+<tr>
+<tr>
+<td>City</td>
+<td>
+<select style="width:250px;" name="city">
+<option>Select city</option>
+<optgroup label="Madhya Pradesh">
+<option>Indore</option>
+<option>Bhopal</option>
+<option>Ujjain</option>
+</optgroup>
+<optgroup label="Maharastra">
+<option>Mumbai</option>
+<option>Pune</option>
+<option>Nasik</option>
+</optgroup>
+</select>
+</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="male"/> Male
+&nbsp;&nbsp;
+<input type="radio" name="gender" value="female"/> Female
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit"  value="Register"/> 
+</td>
+</tr>
+</table>
+</form>
+
+
+{% endblock %}
+
+

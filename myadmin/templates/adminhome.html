@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+	<div id="menu">
+{% block menu %}	
+		<ul>
+<li class="first">
+<a href={{curl}}myadmin/ >Admin Home</a>
+</li>	
+<li><a href={{curl}}myadmin/manageusers/ >Manage Users</a></li>	
+<li>
+<span class="opener">Manage Options<b></b></span>
+	<ul>
+		<li><a href="">Manage Products</a></li>	
+		<li><a href={{curl}}myadmin/addcat/  >Add Categories</a></li>
+		<li><a href="#">Manage Categories</a></li>
+		<li><a href={{curl}}myadmin/addsubcat/ >Add Sub Categories</a></li>
+		<li><a href="#">Manage Sub Categories</a></li>
+		
+		<li><a href="#">Order List</a></li>
+		<li><a href="#">Payment History</a></li>
+	</ul>
+</li>	
+<li>
+<span class="opener">Settings<b></b></span>
+	<ul>
+		<li><a href="#" >Change Passwod</a></li>
+		<li><a href="#">Edit Profile</a></li>
+		<li><a href="#">Launch Notifications</a></li>
+		<li><a href="#">View Feedbacks</a></li>
+	</ul>
+</li>
+<li class="last"><a href={{curl}}login/ >Logout</a></li>	
+</ul>
+{% endblock %}
+
+
+{% block slider %}
+{% endblock %}
+
+
+{% block page %}
+<center>
+<h1>Welcome to Admin Panel</h1>
+<h2>Home Page</h2>
+</center>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

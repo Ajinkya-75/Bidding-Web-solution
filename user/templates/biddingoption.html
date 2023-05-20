@@ -1,0 +1,86 @@
+{% extends 'userhome.html' %}
+
+{% block slider %}
+{% endblock %}
+
+{% block page %}
+
+
+<center>
+<h1>Bid Product To Buy It!!!! </h1>
+
+<br>
+
+
+<form method="post" action={{curl}}user/mybid/  >
+{% csrf_token %}
+<table cellspacing=40">
+<tr>
+<td><b>Title</b></td>
+<td>{{pdetails.1}}</td>
+</tr>
+
+<tr>
+<td><b>category</b></td>
+<td>{{pdetails.2}}</td>
+</tr>
+
+<tr>
+<td><b>Description</b></td>
+<td>{{pdetails.4}}</td>
+</tr>
+
+<tr>
+<td><b>Mobile</b></td>
+<td>{{pdetails.5}}</td>
+</tr>
+
+<tr>
+<td><b>Uid</b></td>
+<td>{{pdetails.7}}</td>
+</tr>
+
+<tr>
+<td><b>Product Image</b></td>
+<td><img src={{media_url}}{{pdetails.6}} height='100' width='100' /></td>
+</tr>
+
+<tr>
+<td><b>Bidding Base Price</b></td>
+<td>&#8377; {{pdetails.3}}</td>
+</tr>
+
+<tr>
+<td><b>Current Bidding Price</b></td>
+<td>&#8377; {{cprice}}</td>
+</tr>
+
+<tr>
+<td><b>New Bidding Price</b></td>
+<td><input type="text" name="bprice" placeholder="Enter bidding price"/>
+<input type="hidden" name="pid" value={{pdetails.0}} />
+<input type="hidden" name="bid_uid" value={{bid_uid}} />
+</td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Bid Product" /></td>
+</tr>
+
+</table>
+</form>
+
+</center>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

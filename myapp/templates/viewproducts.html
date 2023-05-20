@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Product List  >>  {{scnm}}</h1>
+<font>total products : {{total}}</font>
+<br>
+
+{% for p in plist %}
+<br>
+<table height="120" width="600" style="border:2px solid #209D9D;border-radius:20px;">
+<tr>
+<td rowspan="3" width="35%">
+<center>
+<img src={{media_url}}{{p.6}} height="100" width="150" />
+</center>
+</td>
+<td><b>Title : {{p.1}}</b></td>
+</tr>
+<tr>
+<td><b>Price : &#8377;{{p.3}}</b></td>
+</tr>
+<tr>
+<td>
+<b>Description : {{p.4}}</b>
+<br>
+<a href={{curl}}buylogin/?pid={{p.0}}&price={{p.3}}  >Click to buy product</a>
+</td>
+</tr>
+</table>
+{% endfor %}
+
+
+
+{% endblock %}
+
+{% block sidebar %}	
+<div class="box">
+<h3>Category List</h3>
+<ul class="list">
+{% for cat in clist %}
+<li>
+<a href={{curl}}viewsubcat/?cnm={{cat.1}}  >
+{{cat.1}}
+</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,49 @@
+{% extends 'userhome.html' %}
+
+{% block slider %}
+{% endblock %}
+
+{% block page %}
+<center>
+<h1>View Bidding Products </h1>
+
+{% for p in plist %}
+<br>
+
+<table height="120" width="600" style="border:2px solid #209D9D;border-radius:20px;">
+<tr>
+<td rowspan="3" width="35%">
+<center>
+<img src={{media_url}}{{p.6}} height="100" width="150" />
+</center>
+</td>
+<td><b>Title : {{p.1}}</b></td>
+</tr>
+<tr>
+<td><b>Price : &#8377;{{p.3}}</b></td>
+</tr>
+<tr>
+<td>
+<b>Description : {{p.4}}</b>
+<br>
+<a href={{curl}}user/biddingoption/?pid={{p.0}}  >Click to BID product</a>
+</td>
+</tr>
+</table>
+
+{% endfor %}
+
+</center>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

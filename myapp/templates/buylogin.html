@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block slider %}
+{% endblock %}		
+
+{% block page %}
+
+<center>
+<h2>Login Here!!!</h2>
+<font color="orange">{{output}}</font>
+<form method="post" action={{curl}}buylogin/   >
+{% csrf_token %}
+<table cellspacing="10">
+<tr>
+<td>Email</td>
+<td>
+<input type="hidden" name="pid" value={{pid}}  />
+<input type="hidden" name="price" value={{price}} />
+<input type="text" name="email" placeholder="Enter email"/>
+</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>
+<input type="password" name="password" placeholder="Enter password"/>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit"  value="Login To Buy"/> 
+</td>
+</tr>
+</table>
+</form>
+</center>
+
+{% endblock %}
+
+

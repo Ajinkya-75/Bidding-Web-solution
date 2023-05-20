@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+	<div id="menu">
+{% block menu %}	
+		<ul>
+<li class="first">
+<a href={{curl}}user/ >User Home</a>
+</li>	
+<li>
+<span class="opener">Seller Options<b></b></span>
+	<ul>
+		<li><a href={{curl}}user/addproduct/  >Add Product</a></li>
+		<li><a href="#">Manage Product</a></li>
+		<li><a href={{curl}}user/viewbiddingproduct/ >View Bidding Products Status</a></li>
+		<li><a href="#">View Orders</a></li>
+		<li><a href="#">Payment History</a></li>
+	</ul>
+</li>	
+<li>
+<span class="opener">Buyer Options<b></b></span>
+	<ul>
+		<li><a href="#" >View Product</a></li>
+		<li><a href={{curl}}user/biddingproduct/ >View Bidding Products</a></li>
+	</ul>
+</li>	
+<li>
+<span class="opener">Settings<b></b></span>
+	<ul>
+		<li><a href="#" >Change Passwod</a></li>
+		<li><a href="#">Edit Profile</a></li>
+		<li><a href="#">View Notifications</a></li>
+		<li><a href="#">Launch Feedbacks</a></li>
+	</ul>
+</li>
+<li class="last"><a href={{curl}}login/ >Logout</a></li>	
+</ul>
+{% endblock %}
+
+
+{% block slider %}
+{% endblock %}
+
+
+{% block page %}
+<center>
+<h1>Welcome to Users Panel</h1>
+<h2>Home Page</h2>
+</center>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

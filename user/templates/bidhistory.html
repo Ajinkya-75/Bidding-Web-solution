@@ -1,0 +1,47 @@
+{% extends 'userhome.html' %}
+
+{% block slider %}
+{% endblock %}
+
+{% block page %}
+
+<center>
+<h2>View Bidding Details</h2>
+
+<table cellspacing="5">
+<tr>
+<th>Bidding ID</th>
+<th>Product ID</th>
+<th>Bidding User ID</th>
+<th>Bidding Price</th>
+<th>Bidding Information</th>
+</tr>
+<tr><td colspan="5"><hr></td></tr>
+{% for p in blist %}
+<tr>
+<td>{{p.0}}</td>
+<td>{{p.1}}</td>
+<td>{{p.2}}</td>
+<td>{{p.3}}</td>
+<td>{{p.4}}</td>
+</tr>
+<tr><td colspan="10"><hr></td></tr>
+{% endfor %}
+
+</table>
+
+</center>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
